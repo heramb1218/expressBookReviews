@@ -1,0 +1,141 @@
+QUESTION 1:
+curl -s https://api.github.com/repos/<YOUR_GITHUB_USERNAME>/expressBookReviews
+
+{
+  "id": 533628036,
+  "name": "expressBookReviews",
+  "full_name": "<YOUR_GITHUB_USERNAME>/expressBookReviews",
+  "private": false,
+  "fork": true,
+  "url": "https://api.github.com/repos/<YOUR_GITHUB_USERNAME>/expressBookReviews",
+  "html_url": "https://github.com/<YOUR_GITHUB_USERNAME>/expressBookReviews",
+  "parent": {
+    "name": "expressBookReviews",
+    "full_name": "ibm-developer-skills-network/expressBookReviews",
+    "html_url": "https://github.com/ibm-developer-skills-network/expressBookReviews"
+  },
+  "source": {
+    "name": "expressBookReviews",
+    "full_name": "ibm-developer-skills-network/expressBookReviews",
+    "html_url": "https://github.com/ibm-developer-skills-network/expressBookReviews"
+  }
+}
+
+==================================================
+
+QUESTION 2:
+curl -X GET http://localhost:5000/
+
+{
+    "1": {
+        "author": "Chinua Achebe",
+        "title": "Things Fall Apart",
+        "reviews": {}
+    },
+    "2": {
+        "author": "Hans Christian Andersen",
+        "title": "Fairy tales",
+        "reviews": {}
+    },
+    "3": {
+        "author": "Dante Alighieri",
+        "title": "The Divine Comedy",
+        "reviews": {}
+    },
+    "4": {
+        "author": "Unknown",
+        "title": "The Epic Of Gilgamesh",
+        "reviews": {}
+    },
+    "5": {
+        "author": "Unknown",
+        "title": "The Book Of Job",
+        "reviews": {}
+    },
+    "6": {
+        "author": "Unknown",
+        "title": "One Thousand and One Nights",
+        "reviews": {}
+    },
+    "7": {
+        "author": "Unknown",
+        "title": "Njál's Saga",
+        "reviews": {}
+    },
+    "8": {
+        "author": "Jane Austen",
+        "title": "Pride and Prejudice",
+        "reviews": {}
+    },
+    "9": {
+        "author": "Honoré de Balzac",
+        "title": "Le Père Goriot",
+        "reviews": {}
+    },
+    "10": {
+        "author": "Samuel Beckett",
+        "title": "Molloy, Malone Dies, The Unnamable, the trilogy",
+        "reviews": {}
+    }
+}
+
+==================================================
+
+QUESTION 3:
+curl -s -X GET http://localhost:5000/isbn/1
+
+{"author":"Chinua Achebe","title":"Things Fall Apart","reviews":{}}
+
+==================================================
+
+QUESTION 4:
+curl -s -X GET "http://localhost:5000/author/Chinua%20Achebe"
+
+{"1":{"author":"Chinua Achebe","title":"Things Fall Apart","reviews":{}}}
+
+==================================================
+
+QUESTION 5:
+curl -s -X GET "http://localhost:5000/title/Things%20Fall%20Apart"
+
+{"1":{"author":"Chinua Achebe","title":"Things Fall Apart","reviews":{}}}
+
+==================================================
+
+QUESTION 6:
+curl -s -X GET http://localhost:5000/review/1
+
+{}
+
+==================================================
+
+QUESTION 7:
+curl -s -X POST http://localhost:5000/register -H "Content-Type: application/json" -d "{\"username\": \"heramb\", \"password\": \"password123\"}"
+
+{"message":"Customer successfully registered. Now you can login"}
+
+==================================================
+
+QUESTION 8:
+curl -s -c cookies.txt -X POST http://localhost:5000/customer/login -H "Content-Type: application/json" -d "{\"username\": \"heramb\", \"password\": \"password123\"}"
+
+Customer successfully logged in
+
+==================================================
+
+QUESTION 9:
+curl -s -b cookies.txt -X PUT "http://localhost:5000/customer/auth/review/1?review=This%20is%20an%20amazing%20book"
+
+The review for the book with ISBN 1 has been added/updated. Reviews: {"heramb":"This is an amazing book"}
+
+==================================================
+
+QUESTION 10:
+curl -s -b cookies.txt -X DELETE "http://localhost:5000/customer/auth/review/1"
+
+Reviews for the ISBN 1 posted by the user heramb deleted.
+
+==================================================
+
+QUESTION 11:
+https://github.com/<YOUR_GITHUB_USERNAME>/expressBookReviews/blob/main/final_project/router/general.js

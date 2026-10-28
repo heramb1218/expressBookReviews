@@ -33,7 +33,7 @@ curl -X GET http://localhost:5000/
     },
     "7": {
         "author": "Unknown",
-        "title": "Nj\u00e1l's Saga",
+        "title": "Njál's Saga",
         "reviews": {}
     },
     "8": {
@@ -42,8 +42,8 @@ curl -X GET http://localhost:5000/
         "reviews": {}
     },
     "9": {
-        "author": "Honor\u00e9 de Balzac",
-        "title": "Le P\u00e8re Goriot",
+        "author": "Honoré de Balzac",
+        "title": "Le Père Goriot",
         "reviews": {}
     },
     "10": {
